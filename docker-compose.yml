@@ -1,0 +1,46 @@
+version: "3"
+
+services:
+    app:
+        container_name: app
+        restart: always
+        build:
+            context: .
+        ports:
+            - "8000:8000"
+        volumes:
+            - .:/app
+        env_file:
+            - .env
+        environment:
+            - SERVER_ENVIRONMENT=local
+        command: ["/app/wait-for-it.sh", "db:5432", "--", "/app/start.sh"]
+        depends_on:
+            - db
+
+    db:
+        image: postgres:13
+        container_name: HRBase_db
+        volumes:
+            - postgres_data:/var/lib/postgresql/data
+        env_file:
+            - .env
+        environment:
+            - POSTGRES_DB=${DB_NAME}
+            - POSTGRES_USER=${DB_USER}
+            - POSTGRES_PASSWORD=${DB_PASS}
+        ports:
+            # CONTAINER_PORT:HOST_PORT port mapping (https://docs.docker.com/compose/networking/#:~:text=Each%20container%20can%20now%20look%20up%20the%20hostname%20web%20or%20db%20and%20get%20back%20the%20appropriate%20container%E2%80%99s%20IP%20address.%20For%20example%2C%20web%E2%80%99s%20application%20code%20could%20connect%20to%20the%20URL%20postgres%3A//db%3A5432%20and%20start%20using%20the%20Postgres%20database.)
+          - 5432:5432
+        healthcheck:
+            test: ["CMD-SHELL", "pg_isready -U postgres"]
+            interval: 10s
+            timeout: 5s
+            retries: 10
+        restart: always
+   
+
+volumes:
+    postgres_data:
+    staticfiles:
+    media:
