@@ -33,12 +33,6 @@ class UserLoginSerializer(serializers.Serializer):
     password = serializers.CharField()
 
 
-# class OrganizationSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Organization
-#         fields = "__all__"
-
-
 class CreateOrgSerializer(serializers.ModelSerializer):
     class Meta:
         model = Organization
