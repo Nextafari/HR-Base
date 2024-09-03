@@ -1,4 +1,4 @@
-# HR-Base
+# [HR-Base](http://54.153.2.29/swagger/)
 
 #### Overview
 HR Base is an HR Tool for job management and organization administration written in Django. It provides various functionalities for users, organizations and job listings.
@@ -90,5 +90,5 @@ sudo systemctl restart nginx
 
 Build and run containers to start project
 ```bash
-docker-compose build && docker-compose up --no-deps -d
+git clone repo proj_dir && cd proj_dir && docker-compose build && docker-compose up --no-deps -d
 ```
