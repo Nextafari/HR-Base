@@ -61,7 +61,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(unique=True)
     name = models.CharField(max_length=100)
     role = models.CharField(
-        max_length=150, default=UserRoles.USER, choices=UserRoles.choices
+        max_length=50, default=UserRoles.USER, choices=UserRoles.choices
     )
     last_login = models.DateTimeField(verbose_name="last login", auto_now=True)
     is_active = models.BooleanField(default=True)
