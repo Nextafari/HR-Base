@@ -69,7 +69,9 @@ server {
 }
 ```
 
-When done with the above run this, ensure to add this inside the http directive of Nginx's default config file (nginx.conf) as seen [here](https://github.com/Nextafari/HR-Base/blob/main/Screenshot_2024-09-03_at_18.42.06.png)
+When done with the above run this, ensure to add this inside the http directive 
+of Nginx's default config file (nginx.conf) as seen 
+[here](https://github.com/Nextafari/HR-Base/blob/main/Screenshot_2024-09-03_at_18.50.22.png)
 ```bash
 include /etc/nginx/sites-enabled/*.conf;
 ```

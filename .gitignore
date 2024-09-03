@@ -142,3 +142,4 @@ Pipfile
 Pipfile.lock
 
 notes.md
+.DS_Store
