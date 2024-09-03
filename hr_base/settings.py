@@ -204,3 +204,4 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 SHOW_DOCS = os.environ["SHOW_DOCS"]
 SERVER_ENVIRONMENT = os.environ["SERVER_ENVIRONMENT"]
+BASE_URL = os.environ["BASE_URL"]
