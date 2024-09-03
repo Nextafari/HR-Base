@@ -32,11 +32,6 @@ schema_view = get_schema_view(
         default_version="v1.0.0",
     ),
     public=settings.SHOW_DOCS.lower() in ("yes", "true"),
-    # url=(
-    #     settings.BASE_URL
-    #     if settings.SERVER_ENVIRONMENT != "local"
-    #     else "http://127.0.0.1:8000"
-    # ),
     permission_classes=(permissions.AllowAny,),
 )
 
